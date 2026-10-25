@@ -574,3 +574,4 @@ a.logo:hover .logo-m { transform: rotate(-8deg) scale(1.06); }
 .en-only { display: none; }
 html[lang="en"] .en-only { display: block; }
 .legal-en { background: var(--sand); border-radius: 14px; padding: 14px 18px; font-weight: 600; margin-bottom: 24px; }
+.foot .join-btns .btn { display: inline-flex; align-items: center; padding: 0 24px; }
