@@ -20,8 +20,8 @@
       return '<button type="button" class="card-sw' + (x === p ? ' is-on' : '') + '" data-slug="' + x.slug + '" aria-pressed="' + (x === p) + '" title="' + x.colour + '" aria-label="' + x.colour + '"><i style="background:' + sw(x.colours) + '"></i></button>';
     }).join('');
     return '<li class="card rv" style="--d:' + ((i % 4) * 0.07) + 's"><a href="urun.html?u=' + p.slug + '">' +
-      '<span class="card-pic"><img src="img/p-' + p.slug + '-0.webp" alt="' + p.name + '" width="720" height="1080" loading="lazy">' +
-      '<img src="img/p-' + p.slug + '-1.webp" alt="" width="720" height="1080" loading="lazy">' +
+      '<span class="card-pic"><img src="p-' + p.slug + '-0.webp" alt="' + p.name + '" width="720" height="1080" loading="lazy">' +
+      '<img src="p-' + p.slug + '-1.webp" alt="" width="720" height="1080" loading="lazy">' +
       '<span class="card-tag">' + p.collection + '</span><span class="card-add" aria-hidden="true">' + PLUS + '</span></span>' +
       '<span class="card-meta"><b>' + p.name + '</b><span>' + p.price + '</span></span></a>' +
       '<div class="card-opts" role="group" aria-label="Renk seçenekleri">' + opts +
@@ -33,8 +33,8 @@
     if (!b) return;
     var p = bySlug(b.dataset.slug), li = b.closest('.card'), a = $('a', li), im = $$('.card-pic img', li);
     a.href = 'urun.html?u=' + p.slug;
-    im[0].src = 'img/p-' + p.slug + '-0.webp'; im[0].alt = p.name;
-    im[1].src = 'img/p-' + p.slug + '-1.webp';
+    im[0].src = 'p-' + p.slug + '-0.webp'; im[0].alt = p.name;
+    im[1].src = 'p-' + p.slug + '-1.webp';
     $('.card-meta b', li).textContent = p.name;
     $('.card-meta span', li).textContent = p.price;
     $$('.card-sw', li).forEach(function (x) { var on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on); });
@@ -89,8 +89,8 @@
     $('#pKicker').textContent = p.collection + ' koleksiyonu';
     $('#pPrice').textContent = p.price;
     $('#pDesc').textContent = p.desc;
-    $('#pImg0').src = 'img/p-' + p.slug + '-0.webp'; $('#pImg0').alt = p.name;
-    $('#pImg1').src = 'img/p-' + p.slug + '-1.webp'; $('#pImg1').alt = p.name + ', ikinci görsel';
+    $('#pImg0').src = 'p-' + p.slug + '-0.webp'; $('#pImg0').alt = p.name;
+    $('#pImg1').src = 'p-' + p.slug + '-1.webp'; $('#pImg1').alt = p.name + ', ikinci görsel';
     $$('.pBuy').forEach(function (a) { a.href = p.shopier || 'https://www.shopier.com/taygapets'; });
     var hint = $('#sizeHint');
     var CH = [34, 42, 50, 58, 66], NK = [31, 35, 38, 43, 45];
@@ -112,7 +112,7 @@
     $('#swatches').innerHTML = P.filter(function (x) { return x.collection === p.collection; }).map(function (x) {
       var on = x.slug === p.slug;
       return '<a role="listitem" class="swatch' + (on ? ' is-on' : '') + '" href="urun.html?u=' + x.slug + '"' + (on ? ' aria-current="true"' : '') +
-        ' title="' + x.colour + '"><span style="background:' + sw(x.colours) + '"></span><img src="img/p-' + x.slug + '-0.webp" alt="" width="72" height="96" loading="lazy"><b>' + x.colour + '</b></a>';
+        ' title="' + x.colour + '"><span style="background:' + sw(x.colours) + '"></span><img src="p-' + x.slug + '-0.webp" alt="" width="72" height="96" loading="lazy"><b>' + x.colour + '</b></a>';
     }).join('');
 
     /* size finder on the product page */
